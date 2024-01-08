@@ -1,3 +1,3 @@
 require("mrcrgl.remap")
-require("mrcrgl.packer")
+require("mrcrgl.lazy")
 require("mrcrgl.set")
