@@ -1,5 +1,6 @@
 require("nvim-treesitter.install").prefer_git = true
 
+-- local parser_path = vim.fn.stdpath("data") .. "/treesitter"
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
   ensure_installed = { "typescript", "javascript", "c", "lua", "rust", "vim", "vimdoc", "query" },
@@ -15,7 +16,8 @@ require'nvim-treesitter.configs'.setup {
   ignore_install = { },
 
   ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-  -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+  -- parser_install_dir = parser_path, 
+  -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
   --
   modules = {},
 
@@ -29,3 +31,4 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+-- vim.opt.runtimepath:append(parser_path)

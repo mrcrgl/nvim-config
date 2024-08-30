@@ -6,4 +6,9 @@ vim.keymap.set('n', '<leader>ps', function()
 end)
 
 local telescope = require('telescope')
+telescope.setup({ defaults = { file_ignore_patterns = {
+  ".git/",
+  "target/",
+  ".cargo/",
+}}})
 telescope.load_extension("workspaces")
