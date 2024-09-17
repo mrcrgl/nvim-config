@@ -3,7 +3,7 @@ require("nvim-treesitter.install").prefer_git = true
 -- local parser_path = vim.fn.stdpath("data") .. "/treesitter"
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "typescript", "javascript", "c", "lua", "rust", "vim", "vimdoc", "query" },
+  ensure_installed = { "typescript", "javascript", "c", "lua", "rust", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,

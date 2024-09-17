@@ -57,4 +57,5 @@ require("lazy").setup({
       require('crates').setup()
     end,
   },
+  'jghauser/follow-md-links.nvim',
 }, {})

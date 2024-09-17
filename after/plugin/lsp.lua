@@ -1,5 +1,15 @@
 local lsp = require('lsp-zero')
-lsp.preset('recommended')
+-- lsp.preset('recommended')
+
+lsp.extend_lspconfig({
+  suggest_lsp_servers = true,
+  sign_icons = {
+    error = 'E',
+    warn = 'W',
+    hint = 'H',
+    info = 'I'
+  }
+})
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
@@ -8,7 +18,7 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     'lua_ls',
     'html',
-    'tsserver',
+    --    'tsserver',
     'eslint',
     'rust_analyzer',
   },
@@ -47,17 +57,8 @@ lspconfig.lua_ls.setup {
 }
 
 local cmp = require('cmp')
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
+-- local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
-lsp.set_preferences({
-  suggest_lsp_servers = true,
-  sign_icons = {
-    error = 'E',
-    warn = 'W',
-    hint = 'H',
-    info = 'I'
-  }
-})
 
 lsp.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
